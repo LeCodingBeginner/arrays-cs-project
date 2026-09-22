@@ -26,7 +26,6 @@ public class BankAccount {
                 transactions[counter] = amount;
                 counter++;
             }
-
             // incrementing the value of the current balance and printing the result
             this.currentBalance+=amount;
             System.out.println(this.name + " has deposited " + amount + "\n New Balance: " + this.currentBalance + ".");
