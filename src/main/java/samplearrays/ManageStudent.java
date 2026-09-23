@@ -169,5 +169,30 @@ public class ManageStudent {
         // 10) Append new student
         Student s6 = new Student(6,"Leibniz",380,20);
         Student[] newStudents = appendStudent(students,s6);
+
+        // 11) school representation:
+        Student[][] school = new Student[2][3];
+        school[0][0] = newStudents[0];
+        school[0][1] = newStudents[1];
+        school[0][2] = newStudents[2];
+        school[1][0] = newStudents[3];
+        school[1][1] = newStudents[4];
+        school[1][2] = newStudents[5];
+
+        // let's display the names of all students in each class:
+        for (int i = 0 ; i<school.length; i++){
+            System.out.println("==== Students in class " + (i+1) + " ====\n");
+            for (int j = 0; j<school[0].length;j++){
+                System.out.println(school[i][j] + " | ");
+            }
+        }
+
+        // let's just sort the classes in order to make it easy for us:
+        sortByGradeDesc(school[1]);
+        sortByGradeDesc(school[0]);
+
+        System.out.println("The top student in class 1 is : " + school[0][0]);
+        System.out.println("The top student in class 2 is : " + school[1][0]);
+
     }
 }
